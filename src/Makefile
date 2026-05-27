@@ -12,7 +12,7 @@ SOURCES = Tolk.cpp TolkJNI.cpp \
 	ScreenReaderDriverJAWS.cpp ScreenReaderDriverNVDA.cpp \
 	ScreenReaderDriverSA.cpp ScreenReaderDriverSNova.cpp \
 	ScreenReaderDriverWE.cpp ScreenReaderDriverZT.cpp \
-	ScreenReaderDriverSAPI.cpp \
+	ScreenReaderDriverSAPI.cpp ScreenReaderDriverSenseReader.cpp\
 	fsapi.c wineyes.c zt.c
 
 $(OUTDIR)\Tolk.dll: $(SOURCES) Tolk.res

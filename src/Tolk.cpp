@@ -13,6 +13,7 @@
 #include "ScreenReaderDriverNVDA.h"
 #include "ScreenReaderDriverSA.h"
 #include "ScreenReaderDriverSAPI.h"
+#include "ScreenReaderDriverSenseReader.h"
 #include "ScreenReaderDriverSNova.h"
 #include "ScreenReaderDriverWE.h"
 #include "ScreenReaderDriverZT.h"
@@ -34,6 +35,8 @@ TOLK_DLL_DECLSPEC void TOLK_CALL Tolk_Load() {
   g_screenReaderDrivers.push_back(new ScreenReaderDriverJAWS());
   g_screenReaderDrivers.push_back(new ScreenReaderDriverWE());
   g_screenReaderDrivers.push_back(new ScreenReaderDriverNVDA());
+  g_screenReaderDrivers.push_back(new ScreenReaderDriverSenseReader());
+
 #ifndef _WIN64
   // This driver does not have 64-bit support.
   g_screenReaderDrivers.push_back(new ScreenReaderDriverSNova());

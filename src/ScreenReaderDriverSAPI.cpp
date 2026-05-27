@@ -43,7 +43,9 @@ bool ScreenReaderDriverSAPI::Silence() {
 }
 
 void ScreenReaderDriverSAPI::Initialize() {
-  if (controller || FAILED(CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_INPROC_SERVER, IID_ISpVoice, (void **)&controller))) {
+CLSID clsid_sapi;
+CLSIDFromProgID(L"SAPI.SpVoice", &clsid_sapi);
+  if (controller || FAILED(CoCreateInstance(clsid_sapi, NULL, CLSCTX_INPROC_SERVER, IID_ISpVoice, (void **)&controller))) {
     // This is here for symmetry with other drivers
     // and so compiling /analyze won't throw a warning.
     return;
